@@ -1,5 +1,6 @@
 import pygame
 from SnL.constants import WIDTH, HEIGHT
+from SnL.board import Board
 
 FPS = 30
 
@@ -9,6 +10,7 @@ pygame.display.set_caption("🐍 Snakes and Ladders 🧭")
 def main():
     run = True
     clock = pygame.time.Clock()
+    board = Board()
 
     while run:
         clock.tick(FPS)
@@ -19,7 +21,10 @@ def main():
 
             if event.type == pygame.MOUSEBUTTONDOWN:
                 pass
-    
+        
+        board.draw_squares(WIN)
+        pygame.display.update()
+
     pygame.quit()
 
 main()
